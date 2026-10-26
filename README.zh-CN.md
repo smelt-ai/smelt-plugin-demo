@@ -4,9 +4,12 @@
 
 [smelt](https://github.com/smelt-ai/smelt) 的插件示例。每个子目录是一个插件，写自己的插件时可以直接复制一份改。
 
+**第一次写插件，从 [写第一个 smelt 插件](docs/getting-started.zh-CN.md) 开始**：复制模板、装进 smelt、改代码、看日志，十分钟走一遍。
+
 | 插件 | 适合 | 演示了什么 |
 | --- | --- | --- |
 | [`forge/`](forge) 熔炉 | 官方示例 | 你开着的每个智能体都是炉边的一个像素铁匠：干活时打铁，等你批准时摇铃，干完一件活打出一块铁锭，铁锭攒多了炉子升级。点铁匠跳到那个会话 |
+| [`hello/`](hello) 你好 | 模板 | 最小的插件，三十几行：状态、界面、按钮、日志。复制它开始写 |
 | [`project-stats/`](project-stats) 项目统计 | 入门 | 一个页面：读当前项目、后台读盘、用控件画界面 |
 | [`code-quiz/`](code-quiz) 代码猜猜看 | 进阶 | 一个小游戏：从项目里抽真实代码，猜它在哪个文件、是谁写的、什么时候写的 |
 
@@ -81,6 +84,12 @@ ln -s "$PWD/smelt-plugin-demo/forge" ~/.smelt/plugins/forge
 - **确认框用 `AlertDialog`。** gpui-shell 自己的 `window.open_dialog` 在 smelt 工作台里用不了。
 
 ## 开发
+
+插件里 `console.log` 的输出和脚本错误写在 `~/.smelt/app.log`，带 `[plugin]` 标记，「面板插件」设置页有「打开日志」按钮：
+
+```bash
+tail -f ~/.smelt/app.log | grep '\[plugin\]'
+```
 
 用编辑器打开插件目录。smelt 每次加载插件都会在里面写出 `gpui-kit.d.ts` 和 `jsconfig.json`，编辑器据此补全和检查所有模块的用法。它们是生成文件，`.gitignore` 已经排除。
 

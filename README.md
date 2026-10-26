@@ -4,9 +4,12 @@
 
 Example plugins for [smelt](https://github.com/smelt-ai/smelt). Each directory is one plugin; copy one as the starting point of your own.
 
+**New to smelt plugins? Start with [Writing your first smelt plugin](docs/getting-started.md)**: copy the template, install it, edit it and read its logs in about ten minutes.
+
 | Plugin | Level | What it shows |
 | --- | --- | --- |
 | [`forge/`](forge) Forge | Official demo | Every agent you have open is a pixel smith at the forge: hammering while it works, ringing a bell when it needs your approval, and turning out an ingot each time it finishes a task. Ingots level up the forge. Click a smith to jump to its session |
+| [`hello/`](hello) Hello | Template | The smallest plugin, about thirty lines: state, interface, a button and logging. Copy it to start |
 | [`project-stats/`](project-stats) Project Stats | Beginner | One page: read the current project, scan files in the background, draw with styled controls |
 | [`code-quiz/`](code-quiz) Code Quiz | Advanced | A small game: pull a real snippet from your project and guess which file it is in, who wrote it and when |
 
@@ -81,6 +84,12 @@ Modules a plugin can import:
 - **Confirm with `AlertDialog`.** gpui-shell's own `window.open_dialog` is not available inside the smelt workspace.
 
 ## Development
+
+`console.log` output and script errors from plugins go to `~/.smelt/app.log`, marked `[plugin]`. The Panel Plugins settings page has an **打开日志 (Open log)** button:
+
+```bash
+tail -f ~/.smelt/app.log | grep '\[plugin\]'
+```
 
 Open a plugin directory in your editor. Each time smelt loads the plugin it writes `gpui-kit.d.ts` and `jsconfig.json` there, so the editor can complete and check every module. They are generated, and `.gitignore` keeps them out of the repository.
 

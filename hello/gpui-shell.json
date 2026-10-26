@@ -1,0 +1,6 @@
+{
+  "id": "com.example.hello",
+  "name": "你好",
+  "version": "0.1.0",
+  "entry": "main.js"
+}
