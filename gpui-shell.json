@@ -1,0 +1,6 @@
+{
+  "id": "com.smelt.demo.project-stats",
+  "name": "项目统计",
+  "version": "0.1.0",
+  "entry": "main.js"
+}
