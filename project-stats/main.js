@@ -123,10 +123,7 @@ export default class ProjectStats extends View {
       return [empty("没有打开项目", "在 smelt 里打开一个项目，这里会统计它的文件。")];
     }
     if (this.error !== null) {
-      return [
-        ErrorAlert.new("error", this.error).size("small"),
-        hint("插件只能读用户主目录里的文件。项目不在主目录下时会读取失败。", cx),
-      ];
+      return [ErrorAlert.new("error", this.error).size("small")];
     }
     if (this.result === null) {
       return [hint(`正在统计… 已数过 ${formatCount(this.progress ?? 0)} 个文件`, cx)];
