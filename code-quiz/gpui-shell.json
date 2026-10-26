@@ -1,0 +1,9 @@
+{
+  "id": "com.smelt.demo.code-quiz",
+  "name": "代码猜猜看",
+  "version": "0.1.0",
+  "entry": "main.js",
+  "capabilities": {
+    "network": { "hosts": ["api.github.com"] }
+  }
+}
