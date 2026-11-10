@@ -1,0 +1,6 @@
+{
+  "id": "com.example.notifications",
+  "name": "通知演示",
+  "version": "0.1.0",
+  "entry": "main.js"
+}
